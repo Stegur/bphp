@@ -1,32 +1,13 @@
 <?php
 
-$login = $_POST['login'];
-$password = $_POST['password'];
-$email = $_POST['email'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $middleName = $_POST['middleName'];
-$code = $_POST['code'];
 
-$validCode = 'nd82jaake';
+$fullName = $lastName . ' ' . $firstName . ' ' . $middleName;
+$fio = $lastName . ' ' . mb_substr($firstName , 0, 1) . '. ' . mb_substr($firstName , 0,1) . '.';
+$surnameAndInitials = mb_substr($lastName,0,1) . mb_substr($firstName , 0, 1) . mb_substr($firstName , 0,1);
 
-// Проверка отсутствия спецсимволов, в логине
-
-$pattern = '/{@}{\/}{*}{?}{,}{;}{:}/';
-$isLoginCorrect = preg_match($pattern, $login);
-
-if (!$isLoginCorrect) {
-    echo "Логин содержит недопустимые символы - @ / * ? , ; : <br>";
-}
-
-// Проверка длины пароля
-
-if (strlen($password) < 8) {
-    echo "Длина пароля должна быть минимум 8 символов <br>";
-}
-
-// Проверка коректности кода
-
-if ($validCode !== strtolower($code)) {
-    echo "Кодовое слово неверно <br>";
-}
+echo "Полное имя: $fullName <br>";
+echo "Фамилия и инициалы: $fio <br>";
+echo "Аббревиатура: $surnameAndInitials <br>";
