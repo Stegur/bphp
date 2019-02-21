@@ -5,8 +5,8 @@ $lastName = $_POST['lastName'];
 $middleName = $_POST['middleName'];
 
 $fullName = $lastName . ' ' . $firstName . ' ' . $middleName;
-$fio = $lastName . ' ' . mb_substr($firstName , 0, 1) . '. ' . mb_substr($firstName , 0,1) . '.';
-$surnameAndInitials = mb_substr($lastName,0,1) . mb_substr($firstName , 0, 1) . mb_substr($firstName , 0,1);
+$fio = $lastName . ' ' . mb_substr($firstName, 0, 1) . '. ' . mb_substr($firstName, 0, 1) . '.';
+$surnameAndInitials = mb_substr($lastName, 0, 1) . mb_substr($firstName, 0, 1) . mb_substr($firstName, 0, 1);
 
 echo "Полное имя: $fullName <br>";
 echo "Фамилия и инициалы: $fio <br>";
